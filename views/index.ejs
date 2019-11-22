@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <title>Mobile Shop</title>
+  </head>
+  <body>
+    <h1 class="text-center">Shop Managment</h1>
+    <br />
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 offset-4">
+          <form action="/api/v1/shops" method="post" role="form">
+            <div class="form-group">
+              <label for="product">Product:</label>
+              <input type="text" class="form-control" name="name" />
+            </div>
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" class="form-control" name="title" id="harun" />
+            </div>
+            <div class="form-group">
+              <label for="price">Price:</label>
+              <input type="text" class="form-control" name="price" />
+            </div>
+            <div class="form-group">
+              <label for="desc">Description:</label>
+              <input type="text" class="form-control" name="description" />
+            </div>
+            <input
+              type="submit"
+              class="btn btn-success btn-block"
+              value="Submit"
+            />
+          </form>
+        </div>
+      </div>
+      <br /><br />
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Product</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Description</th>
+            <th scope="col">Option</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% data.forEach(function(row){ %>
+          <tr>
+            <td><%= row.name %></td>
+            <td><%= row.title %></td>
+            <td><%= row.price %></td>
+            <td><%= row.description %></td>
+            <td>
+              <a class="btn btn-primary btn-sm" href="#">Edit</a>
+              <a class="btn btn-danger btn-sm" href="#">Delete</a>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
