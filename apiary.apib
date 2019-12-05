@@ -1,0 +1,192 @@
+FORMAT: 1A
+HOST: https://harun-api.herokuapp.com/api/v1/
+
+# Md. Harun Or Rashid
+
+StudentAPI is Simple MongoDB database CRUD operation API using NodeJS Framework, express, mongoDB Atlas and mongooge.
+
+## User Collection [/users]
+
+### List All Users [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "status": "success",
+                "result": 8,
+                "data": {
+                    "users": [
+                        {
+                            "_id": "5dd7b6699adaae4e7a85c78d",
+                            "name": "Harun Or Rashid",
+                            "email": "horrashid007@gmail.com",
+                            "password": "$2a$12$HFez3ODkVc8JRA8ZqCKspeRzeQtPYMeFgwT0c3ZArZ9oRL3nIVCcm",
+                            "__v": 0
+                        },
+                        {
+                            "_id": "5dd7b68a9adaae4e7a85c790",
+                            "name": "user4",
+                            "email": "test4@gmail.com",
+                            "password": "$2a$12$Oo25U3SDKmzv3pTNWpOzsuYu/mhUNOAq9Q93Dhz.WQxHnt1xeUD8i",
+                            "__v": 0
+                        },
+                        {
+                            "_id": "5dd7bd55ee035900049ca194",
+                            "name": "user5",
+                            "email": "test5@gmail.com",
+                            "password": "$2a$12$EA4p0ypE1wCO.M19CaMIY.TfLZnV2n4HELC.ixa7icRK/m4foBUpu",
+                            "__v": 0
+                        },
+                        {
+                            "_id": "5dd7bd74ee035900049ca195",
+                            "name": "user5",
+                            "email": "test3@gmail.com",
+                            "password": "$2a$12$t8swxpGiXvVngtb4QM4TlO63xeVwDIvg.r80mfYfPpiPgLmOzssQm",
+                            "__v": 0
+                        },
+                        {
+                            "_id": "5ddaac07a2674b25822ce9ac",
+                            "name": "Test2",
+                            "email": "test2@yahoo.com",
+                            "password": "$2a$12$8.QLNaEivGZiFlUeORKtc.jup1Nn/VMHcevX1LiPPVqSiNBOxU9da",
+                            "__v": 0
+                        },
+                        {
+                            "_id": "5ddaacf270fa316df2835f0a",
+                            "name": "Test3",
+                            "email": "test3@yahoo.com",
+                            "password": "$2a$12$.1NwaFXsVbqn8uwtmajz.u9el.1d0KMhZABbgmT20jByDCUVozYRm",
+                            "__v": 0
+                        },
+                        {
+                            "_id": "5ddd5133c32d15000430163a",
+                            "name": "Harun Khan",
+                            "email": "test@yahoo.com",
+                            "password": "$2a$12$PCfDDu851UrM2qMPHdjBMOn0Ly3Xw/y.UIgkVsuIrVxAFsIi.m29C",
+                            "__v": 0
+                        },
+                        {
+                            "_id": "5de8a6c03cf4ea00043ea418",
+                            "name": "Test User",
+                            "email": "testuser@gmail.com",
+                            "password": "$2a$12$b60uEJl1C6YOO08O/imWh.PUEtN6XUOAhe8B/q8hZksXPwPQzjhze",
+                            "__v": 0
+                        }
+                    ]
+                }
+            }
+        ]
+
+### Create a New Question [POST]
+
+
+You may create your own question using this action. It takes a JSON
+object containing a question and a collection of answers in the
+form of choices.
+
++ Request (application/json)
+
+        {
+            "name": "Use Name",
+            "email": "test@gmail.com",
+            "password": "pass123",
+            "passwordConfirm":"pass123"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+
+    + Body
+
+            {
+                "status": "success",
+                "data": {
+                    "newUser": {
+                        "_id": "5de8a6c03cf4ea00043ea418",
+                        "name": "User Name",
+                        "email": "test@gmail.com",
+                        "password": "$2a$12$b60uEJl1C6YOO08O/imWh.PUEtN6XUOAhe8B/q8hZksXPwPQzjhze",
+                        "__v": 0
+                    }
+                }
+            }
+
+            
+## User [/users/5dd7b6699adaae4e7a85c78d]
+
+id : Id is a specisifc user __id. Example  "5de8a6c03cf4ea00043ea418"
+
+### Retrieve a User [GET]
+
+You may get a single user based on user __id using this action. Example update a user name
+of this user __id: "5dd7b6699adaae4e7a85c78d".
+
+
++ Response 200 (application/json)
+
+    + Headers
+
+
+    + Body
+
+            {
+                "status": "success",
+                "data": {
+                    "user": {
+                        "_id": "5dd7b6699adaae4e7a85c78d",
+                        "name": "Harun Or Rashid",
+                        "email": "horrashid007@gmail.com",
+                        "password": "$2a$12$HFez3ODkVc8JRA8ZqCKspeRzeQtPYMeFgwT0c3ZArZ9oRL3nIVCcm",
+                        "__v": 0
+                    }
+                }
+            }
+            
+
+### Update a User [PATCH]
+
+You may update a user using this action. It takes a JSON
+object containing a updated document of this user. Example update a user name
+of user __id: "5dd7b6699adaae4e7a85c78d"..
+
++ Request (application/json)
+
+        {
+            "name": "Harun Khan"
+        }
+
++ Response 200 (application/json)
+
+    + Headers
+
+
+    + Body
+
+            {
+                "status": "success",
+                "data": {
+                    "user": {
+                        "_id": "5dd7b6699adaae4e7a85c78d",
+                        "name": "Harun Khan",
+                        "email": "horrashid007@gmail.com",
+                        "password": "$2a$12$HFez3ODkVc8JRA8ZqCKspeRzeQtPYMeFgwT0c3ZArZ9oRL3nIVCcm",
+                        "__v": 0
+                    }
+                }
+            }
+            
+### Delete a User [DELETE]
+
+You may delete a user using this action. Example delete a user of
+__id: "5dd7b6699adaae4e7a85c78d".
+
+
++ Response 204 (application/json)
+
+    + Headers
+
+
+    + Body
